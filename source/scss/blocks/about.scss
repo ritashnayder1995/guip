@@ -1,0 +1,58 @@
+.about {
+  background-color: $aboutBG;
+  &__wrap {
+    @include wrapper($pcWidth);
+    display: flex;
+    justify-content: space-between;
+  }
+  &__col{
+    width: 50%;
+    box-sizing: border-box;
+    &-bg {
+      background-image: url(../img/about.jpg);
+      background-repeat: no-repeat;
+      background-size: 628px auto;
+      @media (min-resolution: 1.5dppx) {
+        background-image: url(../img/about-2x.jpg);
+      }
+    }
+    &-txt {
+      padding-left: 90px;
+      padding-top: 132px;
+      padding-bottom: 140px;
+    }
+  }  
+  &__heading {
+    margin-top: 0;
+  }
+  &__signature {
+    margin-top: 10px;
+  } 
+}
+
+@media (max-width: $pcWidth) {
+  .about__wrap {
+    @include wrapper($tabletWidth);  
+  }
+.about__col-txt {
+  // padding-left: 20px;
+width: 55%;
+}
+
+.about__col-bg{
+  width: 40%;
+  background-position-x: -40px;
+}
+}
+
+@media (max-width: $tabletWidth) {
+  .about__wrap {
+    @include wrapper($mobileWidth);  
+  }
+  .about__col-bg{
+    display: none;
+  }
+  .about__col-txt {
+    width: 100%;
+  }
+}
